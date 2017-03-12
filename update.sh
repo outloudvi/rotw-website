@@ -9,7 +9,10 @@ cp README.md ./reviewotw
 cp index.html ./reviewotw
 cd reviewotw
 
-npm install -g marked
+chmod +x perpage.sh
+chmod +x parsemd.sh
+chmod +x update.sh
+
 marked -i README.md -O readme.html
 ./parsemd.sh bio
 ./parsemd.sh ch
@@ -28,5 +31,4 @@ marked -i README.md -O readme.html
 ./perpage.sh w2a
 ./perpage.sh wen/his
 
-npm install -g surge
-surge --project=. --domain rotw.surge.sh
+surge --project . --domain rotw.surge.sh

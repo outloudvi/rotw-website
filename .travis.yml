@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "node"
+script:
+  - npm install -g surge
+  - npm install -g marked
+  - chmod +x perpage.sh
+  - chmod +x parsemd.sh
+  - chmod +x update.sh
+  - bash update.sh
