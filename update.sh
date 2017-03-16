@@ -13,7 +13,7 @@ chmod +x perpage.sh
 chmod +x parsemd.sh
 chmod +x update.sh
 
-marked -i README.md -O readme.html
+marked -i README.md -o readme.html
 ./parsemd.sh bio
 ./parsemd.sh ch
 ./parsemd.sh che
