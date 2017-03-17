@@ -3,6 +3,7 @@
 git clone https://git.oschina.net/crlf/reviewotw.git
 
 cp CNAME ./reviewotw
+cp index.html ./reviewotw
 cp *.sh ./reviewotw
 cd reviewotw
 chmod +x *.sh
@@ -25,5 +26,5 @@ marked -i README.md -o readme.html
 ./perpage.sh w2a
 ./perpage.sh wen/his
 ./addmeta.sh
-rm -rf .git
+rm -rf .git/
 surge --project . --domain rotw.surge.sh
