@@ -1,11 +1,11 @@
 #/bin/bash
 
-git clone https://git.oschina.net/crlf/reviewotw.git .
+git clone https://git.oschina.net/crlf/reviewotw.git
 
-chmod +x perpage.sh
-chmod +x parsemd.sh
-chmod +x update.sh
-chmod +x addmeta.sh
+cp CNAME ./reviewotw
+cp *.sh ./reviewotw
+cd reviewotw
+chmod +x *.sh
 
 marked -i README.md -o readme.html
 ./parsemd.sh bio
