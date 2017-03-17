@@ -1,14 +1,6 @@
 #/bin/bash
 
-git clone https://git.oschina.net/crlf/reviewotw.git
-cp CNAME ./reviewotw
-cp addmeta.sh ./reviewotw
-cp parsemd.sh ./reviewotw
-cp perpage.sh ./reviewotw
-cp update.sh ./reviewotw
-cp README.md ./reviewotw
-cp index.html ./reviewotw
-cd reviewotw
+git clone https://git.oschina.net/crlf/reviewotw.git .
 
 chmod +x perpage.sh
 chmod +x parsemd.sh
@@ -32,3 +24,6 @@ marked -i README.md -o readme.html
 ./perpage.sh phy
 ./perpage.sh w2a
 ./perpage.sh wen/his
+./addmeta.sh
+rm -rf .git
+surge --project . --domain rotw.surge.sh

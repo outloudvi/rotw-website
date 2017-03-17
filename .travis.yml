@@ -8,7 +8,3 @@ script:
   - chmod +x parsemd.sh
   - chmod +x update.sh
   - bash update.sh
-  
-after_success:
-  - bash addmeta.sh
-  - surge --project . --domain rotw.surge.sh
