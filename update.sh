@@ -1,11 +1,16 @@
 #/bin/bash
 
-git clone https://git.oschina.net/crlf/reviewotw.git
+REPO_SRC="https://git.oschina.net/crlf/reviewotw.git"
+#REPO_SRC="https://github com/outloudvi/reviewotw.git"
+REPO_NAME="reviewotw"
+SURGE_TARGET="rotw.surge.sh"
 
-cp CNAME ./reviewotw
-cp index.html ./reviewotw
-cp *.sh ./reviewotw
-cd reviewotw
+git clone $REPO_SRC
+
+cp CNAME $REPO_NAME
+cp index.html $REPO_NAME
+cp *.sh $REPO_NAME
+cd $REPO_NAME
 chmod +x *.sh
 
 marked -i README.md -o readme.html
@@ -27,4 +32,4 @@ marked -i README.md -o readme.html
 ./perpage.sh wen/his
 ./addmeta.sh
 rm -rf .git/
-surge --project . --domain rotw.surge.sh
+surge --project . --domain $SURGE_TARGET
