@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 REPO_SRC="https://git.oschina.net/crlf/reviewotw.git"
 #REPO_SRC="https://github com/outloudvi/reviewotw.git"
