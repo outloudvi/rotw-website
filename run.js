@@ -6,8 +6,8 @@ var cp = require('child_process');
 
 var front = "reviewotw/";
 var dir = [ 'ma', 'ch', 'en', 'phy', 'che', 'bio', 'wen/his' ];
-var tpl = "<!DOCTYPE HTML><meta charset=utf-8><title>{{{title}}}</title><body><a href="..">回到上级目录</a><br />{{&body}}</body>";
-var indextpl = "<!DOCTYPE HTML><meta charset=utf-8><title>索引</title><body><a href="..">回到上级目录</a><br />{{&body}}</body>";
+var tpl = "<!DOCTYPE HTML><meta charset=utf-8><title>{{{title}}}</title><body><a href='..'>回到上级目录</a><br />{{&body}}</body>";
+var indextpl = "<!DOCTYPE HTML><meta charset=utf-8><title>索引</title><body><a href='..'>回到上级目录</a><br />{{&body}}</body>";
 
 function gen_index(path){
 	let ml = fs.readdirSync(path);
