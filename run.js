@@ -7,6 +7,7 @@ var front = "reviewotw/";
 var dir = [ 'ma', 'ch', 'en', 'phy', 'che', 'bio', 'wen/his' ];
 var tpl = "<!DOCTYPE HTML><meta charset=utf-8><title>{{{title}}}</title><body><a href='..'>回到上级目录</a><br />{{&body}}</body>";
 var indextpl = "<!DOCTYPE HTML><meta charset=utf-8><title>索引</title><body><a href='..'>回到上级目录</a><br />{{&body}}</body>";
+var bcount = 0;
 
 function gen_index(path){
 	let ml = fs.readdirSync(path);
@@ -40,6 +41,7 @@ function enumdir(path,file){
 	let res = fs.writeFileSync(path + filex, mmdata, 'utf8');
 	res = fs.unlinkSync(path + file);
 	console.log("File " + file + " has been processed.");
+    bcount += 1;
 }
 
 console.log("Generating...");
@@ -51,4 +53,13 @@ for (x in dir) {
 	}
 	gen_index(front + dir[x] + '/');
 }
-console.log("Everyrthing is done!");
+
+var mod = {};
+mod.build_time = new Date();
+mod.build_by = "Travis CI";
+mod.count = bcount;
+let pmod = JSON.stringify(mod);
+console.log(pmod);
+fs.writeFileSync(front + "build.json", pmod, 'utf8');
+
+console.log("Everything is done!");
