@@ -2,7 +2,6 @@ var _AUTHOR_ = "Outvi V";
 var ma = require('marked');
 var mu = require('mustache');
 var fs = require('fs');
-var cp = require('child_process');
 
 var front = "reviewotw/";
 var dir = [ 'ma', 'ch', 'en', 'phy', 'che', 'bio', 'wen/his' ];
@@ -52,5 +51,4 @@ for (x in dir) {
 	}
 	gen_index(front + dir[x] + '/');
 }
-cp.execSync("cp index.html " + front + "index.html");
 console.log("Everyrthing is done!");
