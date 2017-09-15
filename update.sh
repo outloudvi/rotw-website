@@ -12,6 +12,6 @@ cp index.html $REPO_NAME
 cp *.sh $REPO_NAME
 node run.js
 cd $REPO_NAME
-./addmeta.sh
+sh ./addmeta.sh
 rm -rf .git/ addmeta.sh
 surge --project . --domain $SURGE_TARGET
