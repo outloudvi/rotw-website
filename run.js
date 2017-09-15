@@ -25,7 +25,7 @@ function gen_index(path){
 }
 
 function enumdir(path,file){
-//  console.log(file);
+//      console.log(file);
 	if ( !file.match('.md') ) {
 		console.log(path + file + " is not a HTML. Ignored.");
 		return;
