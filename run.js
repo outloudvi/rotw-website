@@ -1,3 +1,4 @@
+var _AUTHOR_ = "Outvi V";
 var ma = require('marked');
 var mu = require('mustache');
 var fs = require('fs');
