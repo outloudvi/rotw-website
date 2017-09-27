@@ -1,13 +1,12 @@
 var _AUTHOR_ = "Outvi V";
 var ma = require('marked');
-var mu = require('mustache');
+var ej = require('ejs');
 var fs = require('fs');
 
 var front = "reviewotw/";
 var dir = [ 'ma', 'ch', 'en', 'phy', 'che', 'bio', 'wen/his' ];
-var tpl = "<!DOCTYPE HTML><meta charset=utf-8><title>{{{title}}}</title><body><a href='..'>回到上级目录</a><br />{{&body}}</body>";
-var indextpl = "<!DOCTYPE HTML><meta charset=utf-8><title>索引</title><body><a href='..'>回到上级目录</a><br />{{&body}}</body>";
 var bcount = 0;
+var etpl = fs.readFileSync('tpl/pages.ejs','utf8');
 
 function gen_index(path){
 	let ml = fs.readdirSync(path);
@@ -19,7 +18,8 @@ function gen_index(path){
 	str += "</ol>";
 	let p = {};
 	p.body = str;
-	let mmdata = mu.render(indextpl, p);
+	p.isIndex = true;
+	let mmdata = ej.render(etpl, p);
 	let res = fs.writeFileSync(path + 'index.html', mmdata, 'utf8');
 	console.log("Index of " + path + " has been processed.")
 }
@@ -35,7 +35,8 @@ function enumdir(path,file){
 	let p = {};
 	p.title = file.split('.',2)[0];
 	p.body = mdata;
-	let mmdata = mu.render(tpl, p);
+	p.isIndex = false;
+	let mmdata = ej.render(etpl, p);
 //	console.log(mmdata);
 	let filex = file.replace('.md','.html');
 	let res = fs.writeFileSync(path + filex, mmdata, 'utf8');
