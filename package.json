@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/outloudvi/rotw-website.git"
   },
-  "dependencies":{
+  "dependencies": {
     "mustache":"2.2.1^",
     "marked":"2.3.6^"
   },
