@@ -2,9 +2,10 @@ language: node_js
 node_js:
   - "node"
 env:
-  - REPO_SRC="https://git.oschina.net/crlf/reviewotw.git"
-  - REPO_NAME=reviewotw
-  - SURGE_TARGET=rotw.surge.sh
+   global:
+    - REPO_SRC="https://git.oschina.net/crlf/reviewotw.git"
+    - REPO_NAME=reviewotw
+    - SURGE_TARGET=rotw.surge.sh
 script:
   - npm install marked mustache
   - npm install -g surge
