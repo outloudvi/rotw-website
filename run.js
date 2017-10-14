@@ -5,8 +5,8 @@ var fs = require('fs');
 
 var front = "reviewotw/";
 var dir = [ 'ma', 'ch', 'en', 'phy', 'che', 'bio', 'wen/his' ];
-var tpl = "<!DOCTYPE HTML><meta charset=utf-8><title>{{{title}}}</title><body><a href='..'>回到上级目录</a><br />{{&body}}</body>";
-var indextpl = "<!DOCTYPE HTML><meta charset=utf-8><title>索引</title><body><a href='..'>回到上级目录</a><br />{{&body}}</body>";
+var tpl = fs.readFileSync("tpl/page.html", "utf-8");
+var indextpl = fs.readFileSync("tpl/contents.html", "utf-8");
 var bcount = 0;
 
 function gen_index(path){
