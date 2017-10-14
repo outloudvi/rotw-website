@@ -5,7 +5,6 @@ env:
    global:
     - REPO_SRC="https://git.oschina.net/crlf/reviewotw.git"
     - REPO_NAME=reviewotw
-    - SURGE_TARGET=rotw.surge.sh
 script:
   - npm install marked mustache
   - npm install -g surge
@@ -13,4 +12,7 @@ script:
   - bash update.sh
 after_success:
   - node writejs.js
-  - surge --project $REPO_NAME --domain $SURGE_TARGET
+deploy:
+  provider: surge
+  project: ./$REPO_NAME/
+  domain: rotw.surge.sh 
