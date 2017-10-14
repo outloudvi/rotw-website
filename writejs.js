@@ -1,5 +1,5 @@
 var proc = require("process");
-
+var fs = require("fs");
 var mod = {};
 
 var bcount = fs.readFileSync('bcount','utf8');
