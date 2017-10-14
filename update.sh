@@ -12,5 +12,6 @@ cp index.html $REPO_NAME
 cp assets $REPO_NAME
 cp *.sh $REPO_NAME
 node run.js
+node writejs.js
 cd $REPO_NAME
 surge --project . --domain $SURGE_TARGET

@@ -54,12 +54,6 @@ for (x in dir) {
 	gen_index(front + dir[x] + '/');
 }
 
-var mod = {};
-mod.build_time = new Date();
-mod.build_by = "Travis CI";
-mod.count = bcount;
-let pmod = JSON.stringify(mod);
-console.log(pmod);
-fs.writeFileSync(front + "build.json", pmod, 'utf8');
+let res = fs.writeFileSync('bcount', bcount, 'utf8');
 
-console.log("Everything is done!");
+console.log("HTMLs have been built.");
