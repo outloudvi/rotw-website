@@ -15,6 +15,6 @@ mod.triggered_by = proc.env.TRAVIS_EVENT_TYPE;
 mod.count = bcount;
 
 let pmod = JSON.stringify(mod);
-fs.writeFileSync(front + "build.json", pmod, 'utf8');
+fs.writeFileSync(proc.env.REPO_NAME + "/build.json", pmod, 'utf8');
 
 console.log("build.json done!");

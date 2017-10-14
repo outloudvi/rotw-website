@@ -12,4 +12,5 @@ script:
   - chmod +x update.sh
   - bash update.sh
 after_success:
+  - node writejs.js
   - surge --project $REPO_NAME --domain $SURGE_TARGET
