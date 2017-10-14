@@ -1,25 +1,23 @@
 {
-    "name":"rotw_build",
-    "description":"The dude that powers rotw.surge.sh",
-    "version":"1.7",
-    "keywords":[
-        "surge",
-        "mustache"
-    ],
-    "dependencies":{
-        "mustache":"2.2.1^",
-        "marked":"2.3.6^"
-    },
-    "repositories":[
-        {
-            "type":"git",
-            "url":"https://github.com/outloudvi/rotw-website.git"
-        }
-    ],
-    "licenses":[
-        {
-            "name":"MIT",
-            "url":"https://opensource.org/licenses/MIT"
-        }
-    ]
+  "name": "rotwbuild",
+  "version": "1.7",
+  "description": "The dude that powers rotw.surge.sh.",
+  "main": "run.js",
+  "scripts": {
+    "test": "bash update.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/outloudvi/rotw-website.git"
+  },
+  "dependencies":{
+    "mustache":"2.2.1^",
+    "marked":"2.3.6^"
+  },
+  "keywords": [
+    "surge",
+    "mustache"
+  ],
+  "author": "outloudvi",
+  "license": "MIT"
 }
